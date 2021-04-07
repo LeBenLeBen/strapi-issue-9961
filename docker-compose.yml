@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    image: strapi/strapi
+    volumes:
+      - .:/srv/app
+      - /node_modules
+    ports:
+      - 1337:1337
+    depends_on:
+      - db
+
+volumes:
+  pgdata:

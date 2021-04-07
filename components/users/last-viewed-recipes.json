@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_users_last_viewed_recipes",
+  "info": {
+    "name": "LastViewedRecipes",
+    "icon": "list-ol",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "recipe": {
+      "model": "recipe"
+    }
+  }
+}
